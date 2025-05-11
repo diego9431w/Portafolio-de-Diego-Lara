@@ -1,159 +1,239 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Portafolio</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Diego Lara - Portafolio</title>
     <style>
-        :root {
-            --bg: #f4f4f4;
-            --text: #333;
-            --primary: #3498db;
-            --secondary: #2c3e50;
+      * {
+        box-sizing: border-box;
+      }
+      body { 
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        color: #333;
+      }
+      header {
+        background-color: #007BFF;
+        color: white;
+        text-align: center;
+        padding: 2rem;
+      }
+      header h1 {
+        margin: 0;
+      }
+      section {
+        max-width: 900px;
+        margin: auto;
+        padding: 2rem;
+        background: white;
+        margin-top: 1rem;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      }
+      h2 {
+        color: #007BFF;
+      }
+      .skills ul, .projects {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        padding: 0;
+        list-style: none;
+      }
+      .skills li {
+        background: #e0e0e0;
+        padding: 0.5rem 1rem;
+        border-radius: 5px;
+      }
+      .project {
+        flex: 1 1 calc(50% - 1rem);
+        background: #f9f9f9;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        padding: 1rem;
+      }
+      .project img {
+        width: 100%;
+        height: auto;
+        border-radius: 5px;
+      }
+      .contact a {
+        display: inline-block;
+        margin-top: 1rem;
+        text-decoration: none;
+        color: white;
+        background: #007BFF;
+        padding: 0.7rem 1.2rem;
+        border-radius: 5px;
+        margin-right: 1rem;
+      }
+      footer {
+        text-align: center;
+        padding: 1rem;
+        background: #f1f1f1;
+        margin-top: 2rem;
+      }
+      @media (max-width: 600px) {
+        .project {
+          flex: 1 1 100%;
         }
+      }
+      #modo-btn {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 1000;
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 20px;
+  background-color: #007BFF;
+  color: white;
+  cursor: pointer;
+  font-size: 1rem;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  animation: bounceIn 0.5s ease-out;
+}
 
-        [data-theme="dark"] {
-            --bg: #121212;
-            --text: #f4f4f4;
-            --primary: #3498db;
-            --secondary: #1a1a1a;
-        }
+#modo-btn:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
 
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: var(--bg);
-            color: var(--text);
-            transition: background-color 0.5s, color 0.5s;
-        }
+@keyframes bounceIn {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  60% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.dark-mode {
+  background-color: #121212;
+  color: #f0f0f0;
+}
+.dark-mode header {
+  background-color: #1f1f1f;
+}
 
-        header {
-            background-color: var(--primary);
-            color: white;
-            padding: 1rem;
-            text-align: center;
-        }
+.dark-mode section {
+  background-color: #1e1e1e;
+  box-shadow: none;
+}
+.dark-mode .skills li {
+  background: #333;
+}
 
-        nav a {
-            color: white;
-            margin: 0 1rem;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-
-        nav a:hover {
-            color: yellow;
-        }
-
-        section {
-            padding: 2rem;
-        }
-
-        .projects img {
-            width: 100%;
-            max-width: 300px;
-            border-radius: 8px;
-            transition: transform 0.3s;
-        }
-
-        .projects img:hover {
-            transform: scale(1.05);
-        }
-
-        form {
-            display: flex;
-            flex-direction: column;
-            max-width: 400px;
-            margin: auto;
-        }
-
-        form input, form textarea {
-            margin: 0.5rem 0;
-            padding: 0.5rem;
-            border: 1px solid var(--secondary);
-            border-radius: 5px;
-        }
-
-        form button {
-            background-color: var(--primary);
-            color: white;
-            border: none;
-            padding: 0.7rem;
-            cursor: pointer;
-            border-radius: 5px;
-            transition: background-color 0.3s;
-        }
-
-        form button:hover {
-            background-color: #2980b9;
-        }
-
-        .theme-toggle {
-            position: fixed;
-            top: 1rem;
-            right: 1rem;
-            background: var(--primary);
-            color: white;
-            border: none;
-            border-radius: 50%;
-            width: 40px;
-            height: 40px;
-            cursor: pointer;
-            font-size: 1.2rem;
-        }
+.dark-mode .project {
+  background: #2a2a2a;
+  border-color: #444;
+}
+.dark-mode .contact a {
+  background: #333;
+}
+.dark-mode footer {
+  background: #1f1f1f;
+  color: #ccc;
+}
+#modo-icono {
+  display: inline-block;
+  transition: transform 0.6s ease;
+}
+.rotar {
+  transform: rotate(360deg);
+}
     </style>
-</head>
+  </head>
 <body>
-
-    <button class="theme-toggle" onclick="toggleTheme()">🌙</button>
-
-    <header>
-        <h1>Mi Portafolio</h1>
-        <nav>
-            <a href="#about">Sobre mí</a>
-            <a href="#projects">Proyectos</a>
-            <a href="#contact">Contacto</a>
-        </nav>
-    </header>
-
-    <section id="about">
-        <h2>Sobre mí</h2>
-        <p>¡Hola! Soy Diego Lara, estudiante tecnico de programación web por crear sitios modernos y funcionales. </p>
-    </section>
-
-    <section id="projects" class="projects">
-        <h2>Proyectos</h2>
-        <div>
-            <h3>Proyecto 1</h3>
-            <a href="https://diego9431w.github.io/Proyecto-restaurante-El-Buen-sabor/"> clic aqui para ir a proyecto 1</a>
-            <p>Página de restaurante falso</p>
-        </div>
-        <div>
-            <h3>Proyecto 2</h3>
-            <a href="https://diego9431w.github.io/Calculadora-con-JavaScript/">Clic aqui para ir a proyecto 2</a>
-            <p>Página con Calculadora utilizando Java Script</p>
-        </div>
-        <div>
-            <h4>Proyecto 3</h4>
-            <a href="https://diego9431w.github.io/Calculadora-con-JavaScript/">Clic aqui para ir a proyecto 3</a>
-            <p>Página para gerenador de contraseñas </p>
-        </div>
-    
-    <section id="contact">
-        <h2>Contacto</h2>
-        <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-            <input type="text" name="name" placeholder="Tu nombre" required>
-            <input type="email" name="_replyto" placeholder="Tu correo" required>
-            <textarea name="message" placeholder="Tu mensaje" required></textarea>
-            <button type="submit">Enviar</button>
-        </form>
-    </section>
-
-    <script>
-        function toggleTheme() {
-            const currentTheme = document.documentElement.getAttribute("data-theme");
-            document.documentElement.setAttribute("data-theme", currentTheme === "dark" ? "light" : "dark");
-        }
-    </script>
+  <button id="modo-btn"><span id="modo-icono">🌙</span> Activar modo oscuro</button>
+  <header>
+    <h1>Diego Lara</h1>
+    <p>Técnico en Programación Web</p>
+  </header>
+  <section class="about">
+    <h2>Sobre mí</h2>
+    <p>Soy un desarrollador web joven apasionado por crear soluciones digitales modernas, rápidas y funcionales. Ofrezco servicios para negocios, emprendedores y profesionales que quieran tener presencia en internet.</p>
+  </section>
+  <section class="services">
+    <h2>Servicios</h2>
+    <ul>
+      <li>✔️ Páginas web para negocios</li>
+      <li>✔️ Portafolios personales</li>
+      <li>✔️ Sitios personales o informativos</li>
+      <li>✔️ Tiendas online sencillas</li>
+    </ul>
+  </section>
+  <section class="projects">
+    <h2>🤠 Proyectos</h2>
+    <div class="project">
+      <h3>🍽️ Restaurante - El Buen Sabor</h3>
+      <p>Sitio web de muestra para un restaurante, con menú, presentación e información de contacto.</p>
+      <a href="https://diego9431w.github.io/Proyecto-restaurante-El-Buen-sabor/" target="_blank">Ver proyecto</a>
+    </div>
+    <div class="project">
+      <h3>🔐 Generador de Contraseñas</h3>
+      <p>Herramienta en línea para generar contraseñas seguras con JavaScript.</p>
+      <a href="https://diego9431w.github.io/Generador-de-constrase-as/" target="_blank">Ver proyecto</a>
+    </div>
+    <div class="project">
+      <h3>🧮 Calculadora en JavaScript</h3>
+      <p>Calculadora funcional desarrollada con HTML, CSS y JavaScript puro.</p>
+      <a href="https://diego9431w.github.io/Calculadora-con-JavaScript/" target="_blank">Ver proyecto</a>
+    </div>
+  </section>
+  <section class="skills">
+    <h2>Habilidades</h2>
+    <ul>
+      <li>HTML5</li>
+      <li>CSS3</li>
+      <li>JavaScript</li>
+      <li>Visual Basic</li>
+      <li>Git & GitHub</li>
+    </ul>
+  </section>
+  <section class="contact">
+    <h2>Contacto</h2>
+    <a href="https://wa.me/5218124087726" target="_blank">📱 WhatsApp</a>
+    <a href="mailto:diego.alonsolg@outlook.com">✉️ Correo</a>
+  </section>
+  <footer>
+    <p>© 2025 Diego Lara. Todos los derechos reservados.</p>
+  </footer>
+  <script>
+    const botonModo = document.getElementById('modo-btn');
+    const body = document.body;
+    const icono = document.getElementById('modo-icono');
+    const sonido = document.getElementById('modo-sonido');
+  
+    // Cargar preferencia del usuario
+    if (localStorage.getItem('modo') === 'oscuro') {
+      body.classList.add('dark-mode');
+      botonModo.innerHTML = '<span id="modo-icono">☀️</span> Activar modo claro';
+    }
+  
+    botonModo.addEventListener('click', () => {
+      body.classList.toggle('dark-mode');
+      const oscuro = body.classList.contains('dark-mode');
+  
+      // Reproducir sonido
+      sonido.currentTime = 0;
+      sonido.play();
+  
+      // Cambiar ícono con rotación
+      icono.classList.add('rotar');
+      setTimeout(() => {
+        botonModo.innerHTML = `<span id="modo-icono">${oscuro ? '☀️' : '🌙'}</span> Activar modo ${oscuro ? 'claro' : 'oscuro'}`;
+      }, 300);
+  
+      localStorage.setItem('modo', oscuro ? 'oscuro' : 'claro');
+    });
+  </script>
 </body>
 </html>
