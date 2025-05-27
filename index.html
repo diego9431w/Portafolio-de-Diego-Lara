@@ -5,6 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Diego Lara - Portafolio</title>
     <style>
+      .logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: white;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.logo .icon {
+  font-size: 2rem;
+}
+
+/* Modo oscuro */
+.dark-mode .logo {
+  color: #00d9ff;
+}
+
       html {
   scroll-behavior: smooth;
 }
@@ -354,6 +374,10 @@ header {
 <body>
   <button id="modo-btn"><span id="modo-icono">🌙</span> Activar modo oscuro</button>
   <header>
+    <div class="logo">
+  <span class="icon">💻</span> Diego Lara Dev
+</div>
+
     <h1>Diego Lara</h1>
     <p>Técnico en Programación Web</p>
     <nav class="navbar">
