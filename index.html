@@ -149,6 +149,30 @@
 .rotar {
   transform: rotate(360deg);
 }
+      .location {
+  max-width: 900px;
+  margin: auto;
+  padding: 2rem;
+  background: white;
+  margin-top: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.dark-mode .location {
+  background: #1e1e1e;
+  color: #f0f0f0;
+}
+
+.location h2 {
+  color: #007BFF;
+}
+
+.mapa iframe {
+  border-radius: 10px;
+  margin-top: 1rem;
+}
+
     </style>
   </head>
 <body>
@@ -204,6 +228,21 @@
     <a href="mailto:diego.alonsolg@outlook.com">✉️ Correo</a>
   </section>
   <footer>
+    <section class="location">
+  <h2>📍 Nuestra Sucursal</h2>
+  <p>Estamos ubicados en Monterrey, Nuevo León, México. Atendemos con previa cita para proyectos, asesorías o servicios web personalizados.</p>
+  <div class="mapa">
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3582.0111833360183!2d-100.31611268497565!3d25.686614983674898!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8662958ae92aa1cf%3A0xf958c3d055e0c725!2sMonterrey%2C%20N.L.!5e0!3m2!1ses!2smx!4v1620246641707!5m2!1ses!2smx"
+      width="100%"
+      height="300"
+      style="border:0;"
+      allowfullscreen=""
+      loading="lazy">
+    </iframe>
+  </div>
+</section>
+
     <p>© 2025 Diego Lara. Todos los derechos reservados.</p>
   </footer>
   <script>
