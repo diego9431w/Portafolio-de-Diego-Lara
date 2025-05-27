@@ -5,6 +5,65 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Diego Lara - Portafolio</title>
     <style>
+      .precios {
+  max-width: 900px;
+  margin: auto;
+  padding: 2rem;
+  background: white;
+  margin-top: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.precios h2 {
+  color: #007BFF;
+  margin-bottom: 1rem;
+}
+
+.precios table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.precios th,
+.precios td {
+  padding: 1rem;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+.precios th {
+  background-color: #007BFF;
+  color: white;
+}
+
+.precios tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+/* Modo oscuro */
+.dark-mode .precios {
+  background: #1e1e1e;
+  color: #f0f0f0;
+}
+
+.dark-mode .precios table {
+  border-color: #444;
+}
+
+.dark-mode .precios th {
+  background-color: #333;
+  color: #f0f0f0;
+}
+
+.dark-mode .precios td {
+  border-color: #444;
+}
+
+.dark-mode .precios tbody tr:nth-child(even) {
+  background-color: #2a2a2a;
+}
+
       .formulario-contacto {
   max-width: 900px;
   margin: auto;
@@ -252,6 +311,36 @@
     <p>Soy un desarrollador web joven apasionado por crear soluciones digitales modernas, rápidas y funcionales. Ofrezco servicios para negocios, emprendedores y profesionales que quieran tener presencia en internet.</p>
   </section>
   <section class="services">
+    <section class="precios">
+  <h2>💲 Precios por Proyecto</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Servicio</th>
+        <th>Precio Estimado</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Páginas web para negocios</td>
+        <td>$1,500 MXN</td>
+      </tr>
+      <tr>
+        <td>Portafolios personales</td>
+        <td>$1,000 MXN</td>
+      </tr>
+      <tr>
+        <td>Sitios personales o informativos</td>
+        <td>$900 MXN</td>
+      </tr>
+      <tr>
+        <td>Tiendas online sencillas</td>
+        <td>$2,000 MXN</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
     <h2>Servicios</h2>
     <ul>
       <li>✔️ Páginas web para negocios</li>
