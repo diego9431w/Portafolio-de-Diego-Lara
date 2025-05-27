@@ -5,6 +5,57 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Diego Lara - Portafolio</title>
     <style>
+      html {
+  scroll-behavior: smooth;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #007BFF;
+  z-index: 999;
+  padding: 0.5rem 1rem;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+  color: #ffd700;
+}
+
+/* Espacio para compensar la barra fija */
+header {
+  margin-top: 3rem;
+}
+
+/* Modo oscuro para navbar */
+.dark-mode .navbar {
+  background-color: #1f1f1f;
+}
+
+.dark-mode .navbar a {
+  color: #f0f0f0;
+}
+
+.dark-mode .navbar a:hover {
+  color: #00d9ff;
+}
+
       .precios {
   max-width: 900px;
   margin: auto;
@@ -305,7 +356,25 @@
   <header>
     <h1>Diego Lara</h1>
     <p>Técnico en Programación Web</p>
+    <nav class="navbar">
+  <ul>
+    <li><a href="#sobre-mi">Sobre mí</a></li>
+    <li><a href="#servicios">Servicios</a></li>
+    <li><a href="#proyectos">Proyectos</a></li>
+    <li><a href="#precios">Precios</a></li>
+    <li><a href="#habilidades">Habilidades</a></li>
+    <li><a href="#contacto">Contacto</a></li>
+  </ul>
+</nav>
+
   </header>
+  <section id="sobre-mi" class="about">
+<section id="servicios" class="services">
+<section id="proyectos" class="projects">
+<section id="precios" class="precios">
+<section id="habilidades" class="skills">
+<section id="contacto" class="contact">
+
   <section class="about">
     <h2>Sobre mí</h2>
     <p>Soy un desarrollador web joven apasionado por crear soluciones digitales modernas, rápidas y funcionales. Ofrezco servicios para negocios, emprendedores y profesionales que quieran tener presencia en internet.</p>
