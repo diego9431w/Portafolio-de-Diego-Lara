@@ -5,6 +5,72 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Diego Lara - Portafolio</title>
     <style>
+      .formulario-contacto {
+  max-width: 900px;
+  margin: auto;
+  padding: 2rem;
+  background: white;
+  margin-top: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.formulario-contacto h2 {
+  color: #007BFF;
+}
+
+.formulario-contacto form {
+  display: flex;
+  flex-direction: column;
+}
+
+.formulario-contacto label {
+  margin-top: 1rem;
+  font-weight: bold;
+}
+
+.formulario-contacto input,
+.formulario-contacto textarea {
+  padding: 0.7rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-top: 0.3rem;
+  font-size: 1rem;
+}
+
+.formulario-contacto button {
+  margin-top: 1.5rem;
+  padding: 0.8rem;
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.formulario-contacto button:hover {
+  background-color: #0056b3;
+}
+
+/* Modo oscuro */
+.dark-mode .formulario-contacto {
+  background: #1e1e1e;
+  color: #f0f0f0;
+}
+
+.dark-mode .formulario-contacto input,
+.dark-mode .formulario-contacto textarea {
+  background-color: #2a2a2a;
+  color: #f0f0f0;
+  border-color: #444;
+}
+
+.dark-mode .formulario-contacto button {
+  background-color: #333;
+}
+
       * {
         box-sizing: border-box;
       }
@@ -228,6 +294,27 @@
     <a href="mailto:diego.alonsolg@outlook.com">✉️ Correo</a>
   </section>
   <footer>
+    <section class="formulario-contacto">
+  <h2>📝 Formulario de Contacto</h2>
+  <form action="https://formsubmit.co/tu_correo@example.com" method="POST">
+    <input type="hidden" name="_captcha" value="false">
+
+    <label for="nombre">Nombre:</label>
+    <input type="text" id="nombre" name="nombre" required>
+
+    <label for="email">Correo electrónico:</label>
+    <input type="email" id="email" name="email" required>
+
+    <label for="telefono">Teléfono:</label>
+    <input type="tel" id="telefono" name="telefono">
+
+    <label for="mensaje">Mensaje:</label>
+    <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
+
+    <button type="submit">Enviar mensaje</button>
+  </form>
+</section>
+
     <section class="location">
   <h2>📍 Nuestra Sucursal</h2>
   <p>Estamos ubicados en Monterrey, Nuevo León, México. Atendemos con previa cita para proyectos, asesorías o servicios web personalizados.</p>
